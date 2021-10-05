@@ -1,17 +1,24 @@
 body {
   display: flex;
   flex-direction: column;
+  font-family: Cambria, Cochin, Georgia, Times, "Times New Roman", serif;
+  margin-left: 4vw;
 }
 
 #svg {
   width: 55%;
-  margin: auto;
 }
 
 #Shadow_Image {
   pointer-events: none;
 }
+h2 {
+  font-size: 2vw;
+}
+.cls-1 {
+  cursor: pointer;
+}
 
-#palette {
-  padding: 0;
+circle {
+  cursor: pointer;
 }
