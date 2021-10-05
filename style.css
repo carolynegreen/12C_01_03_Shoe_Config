@@ -1,22 +1,17 @@
-.cls-1 {
-  isolation: isolate;
-}
-
-.cls-2 {
-  fill: none;
-  fill-rule: evenodd;
-}
-
-#Shadow_Image #Shoe_Image {
-  pointer-events: none;
+body {
+  display: flex;
+  flex-direction: column;
 }
 
 #svg {
-  width: 70%;
+  width: 55%;
+  margin: auto;
 }
 
-.color-selector {
-  width: 50px;
-  height: 50px;
-  display: inline-block;
+#Shadow_Image {
+  pointer-events: none;
+}
+
+#palette {
+  padding: 0;
 }

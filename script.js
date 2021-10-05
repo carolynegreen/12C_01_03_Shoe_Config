@@ -1,8 +1,8 @@
 "use strict";
-window.addEventListener("DOMContentLoaded", start);
+document.addEventListener("DOMContentLoaded", start);
 
 let swoosh;
-let toe;
+let tops;
 let back;
 let middle;
 let panels;
@@ -13,29 +13,25 @@ async function start() {
   let response = await fetch("airforce.svg");
   let mySvgData = await response.text();
   document.querySelector("section").innerHTML = mySvgData;
-
   swoosh = document.querySelector("#Swoosh");
-  toe = document.querySelector("#Top");
+  tops = document.querySelector("#Top");
   back = document.querySelector("#Back");
   middle = document.querySelector("#Middle");
   panels = document.querySelector("#Panels");
   sole = document.querySelector("#Sole");
   laces = document.querySelector("#Laces");
 
-  manipSVG();
+  manipulateSvg();
 }
-
 let currentColor = "white";
 
-function setColor(element, colorString) {
-  console.log(element);
-  console.log(colorString);
-  element.style.fill = colorString;
+function setColor(part, colorFill) {
+  part.style.fill = colorFill;
 }
 
-function manipSVG() {
+function manipulateSvg() {
   setColor(swoosh, currentColor);
-  setColor(toe, currentColor);
+  setColor(tops, currentColor);
   setColor(back, currentColor);
   setColor(middle, currentColor);
   setColor(panels, currentColor);
@@ -45,13 +41,28 @@ function manipSVG() {
   swoosh.addEventListener("click", (event) => {
     setColor(event.target, currentColor);
   });
-  toe.addEventListener("click", (event) => {
+  tops.addEventListener("click", (event) => {
+    setColor(event.target, currentColor);
+  });
+  back.addEventListener("click", (event) => {
+    setColor(event.target, currentColor);
+  });
+  middle.addEventListener("click", (event) => {
+    setColor(event.target, currentColor);
+  });
+  panels.addEventListener("click", (event) => {
+    setColor(event.target, currentColor);
+  });
+  sole.addEventListener("click", (event) => {
+    setColor(event.target, currentColor);
+  });
+  laces.addEventListener("click", (event) => {
     setColor(event.target, currentColor);
   });
 
-  document.querySelectorAll(".color-selector").forEach((element) => {
+  document.querySelectorAll("circle").forEach((element) => {
     element.addEventListener("click", (event) => {
-      currentColor = event.target.style.backgroundColor;
+      currentColor = event.target.style.fill;
       console.log(currentColor);
     });
   });
